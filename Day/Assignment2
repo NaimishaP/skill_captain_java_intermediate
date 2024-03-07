@@ -1,0 +1,23 @@
+public class Main {
+    public static void main(String[] args){
+        person firstPerson = new person("Alice",25);
+        person secondPerson = new person("Bob", 30);
+        System.out.println("First person details:\n Name:"+firstPerson.name+
+                "\n Age: "+firstPerson.age);
+        System.out.println("Second person details:\n Name:"+secondPerson.name+
+                "\n Age: "+secondPerson.age);
+    }
+
+}
+
+//create a class person
+public class person {
+    //create an object for class
+    String name;
+    int age;
+    // create a constructor initializing the object
+    public person(String name, int age){
+        this.name = name;
+        this.age = age;
+    }
+}
