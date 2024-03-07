@@ -1,0 +1,48 @@
+//create a class bankAccount
+public class bankAccount{
+    //create attibutes for the class
+    private int accountNumber;
+    private String accountHolderName;
+    private double accountBalance;
+    //create a constructor for the bank account
+    public bankAccount(int accountNumber, String accountHolderName,double accountBalance){
+        this.accountNumber = accountNumber;
+        this.accountHolderName = accountHolderName;
+        this.accountBalance = accountBalance;
+    }
+    // Method to deposit amount into the account
+    public void deposit(double amount) {
+        if (amount > 0) {
+            accountBalance += amount;
+            System.out.println(amount + "rs deposited successfully.");
+        } else {
+            System.out.println("Invalid amount. Please enter a positive value.");
+        }
+    }
+
+    // Method to withdraw amount from the account
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= accountBalance) {
+            accountBalance -= amount;
+            System.out.println(amount + "rs withdrawn successfully.");
+        } else {
+            System.out.println("Insufficient funds or invalid amount.");
+        }
+    }
+    // Method to display account information
+    public void displayAccountInfo() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Holder Name: " + accountHolderName);
+        System.out.println("Account Balance: " + accountBalance+"rs");
+    }
+    public static void main(String[] args){
+        bankAccount myObj = new bankAccount(1007653456, "james " +
+                "gosling", 100);
+        myObj.deposit(100);
+        myObj.displayAccountInfo();
+        myObj.withdraw(200);
+        myObj.displayAccountInfo();
+        myObj.withdraw(500);
+        myObj.displayAccountInfo();
+    }
+}
